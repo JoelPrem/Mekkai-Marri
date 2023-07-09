@@ -1,9 +1,16 @@
+"""
+This is a infinity game made just to have fun with the pygame module,
+while also showing (unartisticly) some of the indian cuisine, which,
+beleive me, look much better than they do here.
+"""
+
+
 import pygame
 import sys
 import random
 
 
-pygame.init()  # TODO: Sound
+pygame.init()
 
 screen = pygame.display.set_mode((1600, 800))
 pygame.display.set_caption("Mekkai Marri")
@@ -141,9 +148,9 @@ def make_food():
             [[BIRYANI, 150], [ROTI, 100], [SAMBAAR, 90], [PANIPURI, 70]]
         )
         Food.last = now
-        eat_button = Food(
+        Food(
             random.randint(50, 1550),
-            5,
+            -40,
             food_type[0],
             8,
             1,
@@ -179,8 +186,6 @@ play_button = Button(800, 400, PLAY, 4, PLAY_HOVER, screen, game_loop)
 
 
 def mekkai_marri():
-    global idle
-    idle = True
     while True:
         screen.blit(BG, (0, 0))
         play_button.draw()
